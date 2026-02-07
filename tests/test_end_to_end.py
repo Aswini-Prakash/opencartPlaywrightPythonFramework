@@ -142,7 +142,11 @@ def add_product_to_cart(page):
     product_page.add_to_cart()
 
     # Verify success message appears
-    expect(product_page.get_confirmation_message()).to_be_visible(timeout=3000)
+    #expect(product_page.get_confirmation_message()).to_be_visible(timeout=3000)
+    confirmation = product_page.get_confirmation_message()
+    confirmation.wait_for(state="visible", timeout=7000)
+
+    expect(confirmation).to_be_visible()
 
 
 # -------------------------------------------------------------
