@@ -101,7 +101,7 @@ class ProductPage:
 
     def add_product_to_cart(self, quantity: str):
         """
-        Combined workflow to:
+        Combined workflows to:
         1. Set product quantity
         2. Add product to the cart
         3. Validate confirmation message (optional)
@@ -111,5 +111,5 @@ class ProductPage:
             self.add_to_cart()
             expect(self.get_confirmation_message()).to_be_visible()
         except Exception as e:
-            print(f"Error in add_product_to_cart workflow: {e}")
+            print(f"Error in add_product_to_cart workflows: {e}")
             raise
